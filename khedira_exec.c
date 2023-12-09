@@ -16,6 +16,7 @@ void khedira_exec(char *exec_comm, char *exec_args[])
 		perror("fork");
 		exit(EXIT_FAILURE);
 	}
+
 	else if (pid == 0)
 	{
 		execve(exec_comm, exec_args, environ);
