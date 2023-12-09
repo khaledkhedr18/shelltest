@@ -9,16 +9,24 @@
 
 void khedira_exec(char *exec_comm, char *exec_args[])
 {
-	pid_t pid = fork();
+	char *myEnvp[] = {NULL};
+	pid_t child_process = fork();
+	char *myCommand[4];
 
-	if (pid == -1)
+	myCommand[0] = "/bin/sh";
+	myCommand[1] = "-c";
+	myCommand[2] = (char *)exec_comm;
+	myCommand[3] = NULL;
+
+
+	if (child_process == -1)
 	{
 		perror("fork");
 		exit(EXIT_FAILURE);
 	}
-	else if (pid == 0)
+	else if (child_process == 0)
 	{
-		execve(exec_comm, exec_args, NULL);
+		execve(myCommand, myCommand, myEnvp);
 		perror("execvp");
 		exit(EXIT_FAILURE);
 	}
