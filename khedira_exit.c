@@ -8,5 +8,5 @@
 
 int khedira_exit(char *excomm)
 {
-	return (strcmp(command, "exit") == 0);
+	return (strcmp(excomm, "exit") == 0);
 }
