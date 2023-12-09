@@ -18,7 +18,7 @@ void khedira_exec(char **exec_comm, char **exec_args)
 	}
 	else if (pid == 0)
 	{
-		execve(exec_comm, exec_args, environ);
+		execve(exec_comm[0], exec_args, environ);
 		perror("./hsh");
 		exit(EXIT_FAILURE);
 	}
