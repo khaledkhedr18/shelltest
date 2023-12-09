@@ -13,7 +13,7 @@ void khedira_uinput(char *comm, size_t size)
 	{
 		if (feof(stdin))
 		{
-			khedira("\n");
+			/*khedira("\n");*/
 			exit(EXIT_SUCCESS);
 		}
 
