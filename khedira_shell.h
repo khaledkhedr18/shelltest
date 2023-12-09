@@ -9,6 +9,8 @@
 #include <sys/wait.h>
 #include <string.h>
 
+extern char **environ;
+
 #define MAX_ARGINPUT_SIZE 100
 #define MAX_ARGUMENTS 10
 
