@@ -7,9 +7,10 @@
  * @exec_args: the list of the args
 */
 
-void khedira_exec(char *exec_comm, char *args[])
+void khedira_exec(char *exec_comm, char *exec_args[])
 {
 	pid_t pid = fork();
+
 	if (pid == -1)
 	{
 		perror("fork");
@@ -17,13 +18,14 @@ void khedira_exec(char *exec_comm, char *args[])
 	}
 	else if (pid == 0)
 	{
-		execvp(exec_comm, args);
+		execvp(exec_comm, exec_args);
 		perror("execvp");
 		exit(EXIT_FAILURE);
 	}
 	else
 	{
 		int mystatus;
+
 		if (wait(&mystatus) == -1)
 		{
 			perror("wait");
