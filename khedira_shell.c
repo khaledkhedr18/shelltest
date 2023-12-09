@@ -12,7 +12,11 @@ int main()
 
 	while (1)
 	{
-		khedira_prompt();
+		if (isatty(0))
+		{
+			khedira_prompt();
+		}
+
 		khedira_uinput(myInput, sizeof(myInput));
 
 		size_t input_len = strlen(myInput);
