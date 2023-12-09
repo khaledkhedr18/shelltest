@@ -26,7 +26,7 @@ void khedira_exec(char *exec_comm, char *exec_args[])
 	}
 	else if (child_process == 0)
 	{
-		execve(myCommand, myCommand, myEnvp);
+		execve(myCommand[0], myCommand, myEnvp);
 		perror("execvp");
 		exit(EXIT_FAILURE);
 	}
