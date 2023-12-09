@@ -9,6 +9,7 @@ int main()
 {
 	char myInput[MAX_ARGINPUT_SIZE];
 	char *myargs[MAX_ARGUMENTS];
+	int mystatus = 0;
 
 	while (1)
 	{
@@ -17,7 +18,7 @@ int main()
 			khedira_prompt();
 		}
 
-		khedira_uinput(myInput, sizeof(myInput));
+		khedira_uinput(myInput, sizeof(myInput), mystatus);
 
 		size_t input_len = strlen(myInput);
 
@@ -35,7 +36,7 @@ int main()
 
 			else
 			{
-				khedira_exec(myargs[0], myargs);
+				mystatus = khedira_exec(myargs[0], myargs, mystatus);
 			}
 		}
 	}

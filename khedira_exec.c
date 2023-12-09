@@ -7,7 +7,7 @@
  * @exec_args: the list of the args
 */
 
-void khedira_exec(char *exec_comm, char *exec_args[])
+int khedira_exec(char *exec_comm, char *exec_args[], int mystatus)
 {
 	pid_t pid = fork();
 
@@ -25,12 +25,14 @@ void khedira_exec(char *exec_comm, char *exec_args[])
 	}
 	else
 	{
-		int mystatus;
+		int childstatus = 0;
 
 		if (wait(&mystatus) == -1)
 		{
 			perror("wait");
 			exit(EXIT_FAILURE);
 		}
+		childstatus = WEXITSTATUS(mystatus);
+		return (childstatus);
 	}
 }

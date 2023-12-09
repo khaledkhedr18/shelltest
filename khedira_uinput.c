@@ -7,14 +7,13 @@
  * @size: the size of the command
 */
 
-void khedira_uinput(char *comm, size_t size)
+void khedira_uinput(char *comm, size_t size, int mystatus)
 {
 	if (fgets(comm, size, stdin) == NULL)
 	{
 		if (feof(stdin))
 		{
-			/*khedira("\n");*/
-			exit(EXIT_SUCCESS);
+			exit(mystatus);
 		}
 
 		else
