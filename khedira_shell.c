@@ -12,20 +12,21 @@ int main()
 
 	while (1)
 	{
-		shell_prompt();
+		khedira_prompt();
 		khedira_uinput(myInput, sizeof(myInput));
 
 		size_t input_len = strlen(myInput);
 
-		if (input_len > 0 && myInput[input_len - 1] = '\n')
+		if (input_len > 0 && myInput[input_len - 1] == '\n')
 		{
-			input[len - 1] = '\0';
+			myInput[input_len - 1] = '\0';
 		}
 
 		int myargcount = khedira_tokenize(myInput, myargs);
+
 		if (myargcount > 0)
 		{
-			khedira_exec(myargs[0], myargs)
+			khedira_exec(myargs[0], myargs);
 		}
 	}
 	return (0);

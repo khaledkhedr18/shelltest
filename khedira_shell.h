@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <string.h>
 
 #define MAX_ARGINPUT_SIZE 100
 #define MAX_ARGUMENTS 10
