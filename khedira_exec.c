@@ -9,6 +9,7 @@
 
 void khedira_exec(char *exec_comm, char *exec_args[])
 {
+	char *myEnvp[] = {NULL};
 	pid_t pid = fork();
 
 	if (pid == -1)
@@ -18,7 +19,7 @@ void khedira_exec(char *exec_comm, char *exec_args[])
 	}
 	else if (pid == 0)
 	{
-		execvp(exec_comm, exec_args);
+		execve(exec_comm, exec_args, myEnvp);
 		perror("./hsh");
 		exit(EXIT_FAILURE);
 	}
