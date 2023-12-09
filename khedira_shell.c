@@ -26,7 +26,13 @@ int main()
 
 		if (myargcount > 0)
 		{
-			khedira_exec(myargs[0], myargs);
+			if (khedira_exit(myargs[0]))
+			break;
+
+			else
+			{
+				khedira_exec(myargs[0], myargs);
+			}
 		}
 	}
 	return (0);
