@@ -5,7 +5,7 @@
 * Return: Void
 */
 
-void khedira_prompt()
+void khedira_prompt(void)
 {
 	khedira("$ ");
 }
