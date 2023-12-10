@@ -7,7 +7,7 @@
 
 int main()
 {
-	size_t input_len;
+	/* size_t input_len; */
 	char myInput[MAX_ARGINPUT_SIZE];
 	/**
 	* int myargcount;
