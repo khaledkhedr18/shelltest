@@ -44,7 +44,7 @@ int main(void)
 			}
 			else if (childstatus == 127)
 			{
-				mystatus == 127;
+				mystatus = 127;
 			}
 		}
 	}
