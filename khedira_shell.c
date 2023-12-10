@@ -26,6 +26,7 @@ int main()
 		else
 		{
 			khedira_exec(myInput, mystatus);
+			return (mystatus);
 		}
 	}
 	return (0);
