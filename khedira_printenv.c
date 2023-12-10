@@ -10,6 +10,6 @@ void khedira_printenv()
 	int i = 0;
 	while(environ[i])
 	{
-		khedira
+		khedira("%s\\n", environ[i++]);
 	}
 }
