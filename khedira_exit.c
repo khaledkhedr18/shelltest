@@ -2,8 +2,8 @@
 
 /**
 * khedira_exit - a function that exits the shell
-* Return: int
-* @excomm: the command
+* Return: Void
+* @excomm: the exit keyword
 */
 
 int khedira_exit(char *excomm)
