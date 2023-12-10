@@ -20,14 +20,18 @@ int main()
 
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
 
-		size_t input_len = strlen(myInput);
+		size_t input_len;
+
+		input_len = strlen(myInput);
 
 		if (input_len > 0 && myInput[input_len - 1] == '\n')
 		{
 			myInput[input_len - 1] = '\0';
 		}
 
-		int myargcount = khedira_tokenize(myInput, myargs);
+		int myargcount;
+
+		myargcount = khedira_tokenize(myInput, myargs)
 
 		if (myargcount > 0)
 		{
