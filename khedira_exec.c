@@ -27,6 +27,14 @@ int khedira_exec(char *exec_comm, int mystatus)
 	else if (pid == 0)
 	{
 		execve(command[0], command, environ);
+		if (errno == EACCES)
+		{
+			mystatus = 2;
+		}
+		else if (errno == ENOENT)
+		{
+			mystatus = 127;
+		}
 		perror("execve");
 		exit(EXIT_FAILURE);
 	}
