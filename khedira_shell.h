@@ -16,8 +16,8 @@ extern char **environ;
 #define MAX_ARGINPUT_SIZE 100
 #define MAX_ARGUMENTS 10
 
-void khedira_prompt();
-int	khedira_char(int c) ;
+void khedira_prompt(void);
+int	khedira_char(int c);
 int	khedira_digit(long n, int base);
 int	khedira_str(char *string);
 int	khedira_format(char khediraspec, va_list khediraap);
@@ -29,4 +29,3 @@ int khedira_exit(char *excomm);
 int khedira_printenv(char *envcomm);
 
 #endif
->>>>>>> c9e8694b3ae610d3a04b38adf952ee2def170703
