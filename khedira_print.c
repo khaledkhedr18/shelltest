@@ -29,7 +29,9 @@ int	khedira_digit(long x, int myBase)
 		return (khedira_digit(-x, myBase) + 1);
 	}
 	else if (x < myBase)
+	{
 		return (khedira_char(symbols[x]));
+	}
 	else
 	{
 		count = khedira_digit(x / myBase, myBase);
