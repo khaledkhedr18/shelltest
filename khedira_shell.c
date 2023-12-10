@@ -24,7 +24,15 @@ int main()
 		}
 
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
-		khedira_exec(myInput, mystatus);
+		if (khedira_exit(myargs[0]))
+		{
+			break;
+		}
+
+		else
+		{
+			khedira_exec(myInput, mystatus);
+		}
 	}
 	return (0);
 }
