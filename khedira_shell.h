@@ -16,7 +16,8 @@ extern char **environ;
 #define MAX_ARGUMENTS 10
 
 void khedira_prompt();
-void khedira(const char *output);
+int khedira(const char *myFormat, ...);
+int khedira_vfprintf(FILE *myStream, const char *MyFormat, va_list MyArgs);
 void khedira_uinput(char *comm, size_t size, int mystatus);
 int khedira_exec(char *exec_comm, int mystatus);
 int khedira_tokenize(char *myinp, char *myargs[]);
