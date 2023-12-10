@@ -28,7 +28,7 @@ int main()
 			int i = 0;
 			while(environ[i])
 			{
-				khedira("%s\\n", environ[i++]);
+				khedira("%s\n", environ[i++]);
 			}
 		}
 
