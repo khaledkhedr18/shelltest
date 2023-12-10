@@ -7,7 +7,7 @@
  * @exec_args: the list of the args
 */
 
-int khedira_exec(char *exec_comm, char *exec_args[], int mystatus)
+int khedira_exec(char *exec_comm, int mystatus)
 {
 	pid_t pid = fork();
 	char *command[4];

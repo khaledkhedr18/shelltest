@@ -38,7 +38,7 @@ int main()
 
 			else
 			{
-				mystatus = khedira_exec(myargs[0], myargs, mystatus);
+				mystatus = khedira_exec(myargs[0], mystatus);
 			}
 		}
 	}
