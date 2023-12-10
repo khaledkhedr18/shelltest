@@ -7,6 +7,8 @@
 
 int main()
 {
+	size_t input_len;
+	int myargcount;
 	char myInput[MAX_ARGINPUT_SIZE];
 	char *myargs[MAX_ARGUMENTS];
 	int mystatus = 0;
@@ -19,9 +21,6 @@ int main()
 		}
 
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
-
-		size_t input_len;
-
 		input_len = strlen(myInput);
 
 		if (input_len > 0 && myInput[input_len - 1] == '\n')
@@ -29,7 +28,6 @@ int main()
 			myInput[input_len - 1] = '\0';
 		}
 
-		int myargcount;
 
 		myargcount = khedira_tokenize(myInput, myargs);
 
