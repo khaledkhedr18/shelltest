@@ -7,13 +7,7 @@
 
 int main()
 {
-	/* size_t input_len; */
 	char myInput[MAX_ARGINPUT_SIZE];
-	/**
-	* int myargcount;
-
-	* char *myargs[MAX_ARGUMENTS];
-	*/
 	int mystatus = 0;
 
 	while (1)
