@@ -5,9 +5,7 @@
  * Return: Void
 */
 
-void khedira_printenv(char *envcomm)
+int khedira_printenv(char *envcomm)
 {
-	
 	return (strcmp(envcomm, "env") == 0);
-
 }
