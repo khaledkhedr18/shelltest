@@ -5,11 +5,9 @@
  * Return: Void
 */
 
-void khedira_printenv()
+void khedira_printenv(char *envcomm)
 {
-	int i = 0;
-	while(environ[i])
-	{
-		khedira("%s\\n", environ[i++]);
-	}
+	
+	return (strcmp(envcomm, "env") == 0);
+
 }

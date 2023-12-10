@@ -23,6 +23,15 @@ int main()
 			break;
 		}
 
+		else if (khedira_printenv(myInput))
+		{
+			int i = 0;
+			while(environ[i])
+			{
+				khedira("%s\\n", environ[i++]);
+			}
+		}
+
 		else
 		{
 			khedira_exec(myInput, mystatus);
