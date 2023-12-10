@@ -13,10 +13,7 @@ int main()
 	while (1)
 	{
 		if (isatty(0))
-		{
 			khedira_prompt();
-		}
-
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
 		if (khedira_exit(myInput))
 		{
@@ -31,7 +28,6 @@ int main()
 				khedira("%s\n", environ[i++]);
 			}
 		}
-
 		else
 		{
 			khedira_exec(myInput, mystatus);
