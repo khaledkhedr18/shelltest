@@ -20,14 +20,14 @@ int khedira_exec(char *exec_comm, int mystatus)
 	if (pid == -1)
 	{
 		perror("fork");
-		exit(EXIT_FAILURE);
+		exit(mystatus);
 	}
 
 	else if (pid == 0)
 	{
 		execve(command[0], command, environ);
 		perror("execve");
-		exit(EXIT_FAILURE);
+		exit(mystatus);
 	}
 	else
 	{
@@ -36,18 +36,9 @@ int khedira_exec(char *exec_comm, int mystatus)
 		if (wait(&mystatus) == -1)
 		{
 			perror("wait");
-			exit(EXIT_FAILURE);
+			exit(mystatus);
 		}
 		childstatus = WEXITSTATUS(mystatus);
-
-		if (childstatus == 0)
-			return (0);
-		else if (childstatus == 2)
-			return (2);
-		else if (childstatus == 127)
-			return (127);
-
 		return (childstatus);
-
 	}
 }
