@@ -24,7 +24,7 @@ int main()
 		}
 
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
-		if (khedira_exit(myargs[0]))
+		if (khedira_exit(myInput[0]))
 		{
 			break;
 		}
