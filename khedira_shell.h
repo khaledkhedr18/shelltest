@@ -26,6 +26,7 @@ void khedira_uinput(char *comm, size_t size, int mystatus);
 int khedira_exec(char *exec_comm, int mystatus);
 int khedira_tokenize(char *myinp, char *myargs[]);
 int khedira_is_exit(char *excomm);
+void khedira_exit(int status);
 int khedira_printenv(char *envcomm);
 
 #endif
