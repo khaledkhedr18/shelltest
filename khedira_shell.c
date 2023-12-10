@@ -31,7 +31,7 @@ int main()
 
 		int myargcount;
 
-		myargcount = khedira_tokenize(myInput, myargs)
+		myargcount = khedira_tokenize(myInput, myargs);
 
 		if (myargcount > 0)
 		{
