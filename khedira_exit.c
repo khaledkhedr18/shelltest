@@ -1,7 +1,7 @@
 #include "khedira_shell.h"
 
 /**
-* khedira_exit - a function that exits the shell
+* khedira_is_exit - a function that exits the shell
 * Return: Void
 * @excomm: the exit keyword
 */
