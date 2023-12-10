@@ -16,9 +16,9 @@ int main(void)
 		if (isatty(0))
 			khedira_prompt();
 		khedira_uinput(myInput, sizeof(myInput), mystatus);
-		if (khedira_exit(myInput))
+		if (khedira_is_exit(myInput))
 		{
-			break;
+			khedira_exit(mystatus);
 		}
 
 		else if (khedira_printenv(myInput))
