@@ -11,7 +11,7 @@ int khedira_exec(char *exec_comm, int mystatus)
 {
 	pid_t pid = fork();
 	char *command[4];
-
+/*khaled*/
 	command[0] = "/bin/sh";
 	command[1] = "-c";
 	command[2] = (char *)exec_comm;
