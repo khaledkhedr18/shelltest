@@ -1,39 +1,64 @@
 #include "khedira_shell.h"
+/**
+ * khedira_char - a function that prints characters
+ * Return: int
+ * @myChar: the character to be printed
+*/
 
-int	khedira_char(int c) 
+int	khedira_char(int myChar) 
 {
-	return write(1, &c, 1);
+	return write(1, &myChar, 1);
 }
 
-int	khedira_digit(long n, int base)
+/**
+ * khedira_digit - a function that prints digits
+ * Return: int
+ * @x: a variable
+ * myBase: the base
+*/
+
+int	khedira_digit(long x, int myBase)
 {
 	int		count;
 	char	*symbols;
 
 	symbols = "0123456789abcdef";
-	if (n < 0)
+	if (x < 0)
 	{
 		write(1, "-", 1);
-		return khedira_digit(-n, base) + 1;
+		return khedira_digit(-x, myBase) + 1;
 	}
-	else if (n < base)
-		return khedira_char(symbols[n]);
+	else if (x < myBase)
+		return khedira_char(symbols[x]);
 	else
 	{
-		count = khedira_digit(n / base, base);
-		return count + khedira_digit(n % base, base);
+		count = khedira_digit(x / myBase, myBase);
+		return count + khedira_digit(x % myBase, myBase);
 	}
 }
 
-int	khedira_str(char *string)
+/**
+ * khedira_str - a function that prints strings
+ * Return: an int
+ * @myString: the string to be printed
+*/
+
+int	khedira_str(char *myString)
 {
 	int	count;
 
 	count = 0;
-	while (*string)
-		count += write(1, string++, 1);
+	while (*myString)
+		count += write(1, myString++, 1);
 	return count;
-}	
+}
+
+/**
+ * khedira_format - a function that specifies the format of the string
+ * Return: an int
+ * @khediraspec: the specifier
+ * @khediraap: the list of the specifiers
+*/
 
 int	khedira_format(char khediraspec, va_list khediraap)
 {
@@ -53,7 +78,11 @@ int	khedira_format(char khediraspec, va_list khediraap)
 	return myCount;
 }
 
-
+/**
+ * khedira - a function that prints an input
+ * Return: int
+ * @myFormat: the format of the string to be printed
+*/
 int	khedira(const char *myFormat, ...)
 {
 	va_list	khedira_ap;
