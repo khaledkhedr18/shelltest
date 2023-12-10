@@ -39,6 +39,18 @@ int khedira_exec(char *exec_comm, int mystatus)
 			exit(EXIT_FAILURE);
 		}
 		childstatus = WEXITSTATUS(mystatus);
-		return (childstatus);
+
+		if (childstatus == 0)
+		{
+			return (0);
+		}
+		else if (childstatus == 2)
+		{
+			return (2);
+		}
+		else if (childstatus == 127)
+		{
+			return (127);
+		}
 	}
 }
