@@ -3,10 +3,10 @@
 /**
  * main - an entry point to the app
  * Return: int
- * 
+ *
 */
 
-int main()
+int main(void)
 {
 	char myInput[MAX_ARGINPUT_SIZE];
 	int mystatus = 0;
@@ -24,7 +24,8 @@ int main()
 		else if (khedira_printenv(myInput))
 		{
 			int i = 0;
-			while(environ[i])
+
+			while (environ[i])
 			{
 				khedira("%s\n", environ[i++]);
 			}
