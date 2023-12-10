@@ -32,7 +32,20 @@ int main(void)
 		}
 		else
 		{
-			khedira_exec(myInput, mystatus);
+			int childstatus = khedira_exec(myInput, mystatus);
+
+			if (childstatus == 0)
+			{
+				mystatus = 0;
+			}
+			else if (childstatus == 2)
+			{
+				mystatus = 2;
+			}
+			else if (childstatus == 127)
+			{
+				mystatus == 127;
+			}
 		}
 	}
 	return (0);
