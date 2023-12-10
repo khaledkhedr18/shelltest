@@ -26,7 +26,7 @@ int khedira_exec(char *exec_comm, char *exec_args[], int mystatus)
 
 	else if (pid == 0)
 	{
-		execve(command[0], exec_args, environ);
+		execve(command[0], command, environ);
 		perror(exec_args[0]);
 		exit(EXIT_FAILURE);
 	}
