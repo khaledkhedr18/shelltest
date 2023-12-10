@@ -47,4 +47,5 @@ int khedira_exec(char *exec_comm, int mystatus)
 		else if (childstatus == 127)
 			return (127);
 	}
+	return (childstatus);
 }
